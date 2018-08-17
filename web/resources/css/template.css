@@ -6,10 +6,14 @@ body {
     max-height: 100%; 
     font-family:Sans-serif;
     line-height: 1.5em;
+    background-color: #ff6600;
 }
 
 header {
-        padding-left: 20px;
+        margin-top: 5px;
+    margin-bottom: 5px;
+
+    padding-left: 20px;
     position: absolute;
     top: 0;
     left: 0;
@@ -25,30 +29,38 @@ header {
     margin-right: 5px;
     margin-left: 5px;
     position: absolute; 
-    top: 70px; 
+    top: 75px; 
     left: 0; 
     bottom: 0;
     width: 230px;
     overflow: auto; /* Scrollbars will appear on this frame only when there's enough content to require scrolling. To disable scrollbars, change to "hidden", or use "scroll" to enable permanent scrollbars */
-    background: #cccccc; 		
+    background: #0000ff; 		
 }
 
 logo {
+
     padding:10px;
 }
 
 main {
     position: fixed;
-    top: 100px; /* Set this to the height of the header */
-    left: 230px; 
+    top: 80px; /* Set this to the height of the header */
+    left: 240px; 
     right: 0;
     bottom: 0;
     overflow: auto; 
-    background: #fff;
+    background: #00ff00;
+    margin-bottom: 5px;
+    margin-right: 5px;
 }
 
 .innertube {
-    margin: 15px; /* Provides padding for the content */
+        margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+   
+
 }
 
 p {
