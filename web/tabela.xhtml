@@ -29,13 +29,23 @@ and open the template in the editor.
             <h:outputText value="#{list.frist}" rendered="#{not list.isEditable}"/>
         </h:column>
     </h:dataTable> -->
+            #{listaNomes.qtd()}
+            #{msgs.teste}
+            #{listaNomes.dois()}
+            
+            caio
             <h:form>
-                <h:dataTable value="#{nameBean.names}" var="name">
+                <h:dataTable value="#{listaNomes.nameBean}" var="row">
+
                     <h:column>
-                        #{name.frist}
+                        <f:facet name="header">Primeiro Nome</f:facet>
+                        <h:outputText value="#{row.frist}"/>
                     </h:column>
+
                     <h:column>
-                        #{name.last}
+                        <f:facet name="header">Sobrenome</f:facet>
+                        <h:outputText value="#{row.last}"/>
+
                     </h:column>
                 </h:dataTable>  
             </h:form>
