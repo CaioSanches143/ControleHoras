@@ -11,44 +11,29 @@ and open the template in the editor.
       >
     <main>
         <div class="innertube">
-
-          <!--  <h:dataTable value="#{nameBean.names}" var="list">
+            <h:form>
+            <h:dataTable value="#{nameList.nameList}" var="list">
                 <h:column>
+
                     <f:facet name="header">
                         <h:outputText value="#{msgs.editColumn}" style="font-weight: bold"/>
                     </f:facet>
-                    <h:selectBooleanCheckbox value="#{name.isEditable}" onclick="submit()"/>
+
+                    <h:selectBooleanCheckbox value="#{list.isEditable}" onclick="submit()"/>
                 </h:column>
-                
+
                 <h:column>
-            #{list.frist}
-            <f:facet name="primeiroNome">
-                <h:outputText value="#{msgs.primeiroNome}" style="font-weight: bold"/>
-            </f:facet>
-            <h:inputText value="#{list.frist}" rendered="#{list.isEditable}" size="10"/>
-            <h:outputText value="#{list.frist}" rendered="#{not list.isEditable}"/>
-        </h:column>
-    </h:dataTable> -->
-            #{listaNomes.qtd()}
-            #{msgs.teste}
-            #{listaNomes.dois()}
-            
-            caio
-            <h:form>
-                <h:dataTable value="#{listaNomes.nameBean}" var="row">
+                    <f:facet name="header">
+                        <h:outputText value="#{msgs.primeiroNome}" style="font-weight: bold"/>
+                    </f:facet>
 
-                    <h:column>
-                        <f:facet name="header">Primeiro Nome</f:facet>
-                        <h:outputText value="#{row.frist}"/>
-                    </h:column>
+                    <h:inputText value="#{list.frist}" rendered="#{list.isEditable}" size="10"/>
+                    <h:outputText value="#{list.frist}" rendered="#{not list.isEditable}"/>
+                </h:column>
 
-                    <h:column>
-                        <f:facet name="header">Sobrenome</f:facet>
-                        <h:outputText value="#{row.last}"/>
-
-                    </h:column>
-                </h:dataTable>  
-            </h:form>
+               
+            </h:dataTable> 
+    </h:form>
 
         </div>
     </main>
