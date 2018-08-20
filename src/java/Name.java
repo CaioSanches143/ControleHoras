@@ -1,14 +1,15 @@
 
 import java.io.Serializable;
 
-public class name implements Serializable{
+public class Name implements Serializable{
     private String frist;
     private String last;
     private boolean isEditable;
-    public name(String frist, String last) {
+    
+    public Name(String frist, String last) {
         this.frist = frist;
         this.last = last;
-        this.isEditable = true;
+        this.isEditable = false;
     }
 
     public String getFrist() {
