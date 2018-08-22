@@ -1,0 +1,21 @@
+.tabela{
+    border: thin solid black;
+}
+
+.tabelaHeader{
+    text-align: center;
+    font-style: italic;
+    color: Snow;
+    background: Teal;
+}
+
+.oddRow{
+    height: 25px;
+    text-align: center;
+    background: #999999;
+}
+
+.evenRow{
+    text-align: center;
+    background: #555;
+}
