@@ -10,30 +10,51 @@ and open the template in the editor.
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       >
     <main>
-        <div class="innertube">
+        <div class="innertube" >
             <h:form>
-            <h:dataTable value="#{nameList.nameList}" var="list">
-                <h:column>
+                <h:dataTable value="#{nameList.nameList}" var="list">
+                    <h:column>
 
-                    <f:facet name="header">
-                        <h:outputText value="#{msgs.editColumn}" style="font-weight: bold"/>
-                    </f:facet>
+                        <f:facet name="header">
+                            <h:outputText value="#{msgs.editColumn}" style="font-weight: bold"/>
+                        </f:facet>
 
-                    <h:selectBooleanCheckbox value="#{list.isEditable}" onclick="submit()"/>
-                </h:column>
+                        <h:selectBooleanCheckbox value="#{list.isEditable}" onclick="submit()"/>
+                    </h:column>
 
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="#{msgs.primeiroNome}" style="font-weight: bold"/>
-                    </f:facet>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{msgs.primeiroNome}" style="font-weight: bold"/>
+                        </f:facet>
 
-                    <h:inputText value="#{list.frist}" rendered="#{list.isEditable}" size="10"/>
-                    <h:outputText value="#{list.frist}" rendered="#{not list.isEditable}"/>
-                </h:column>
+                        <h:inputText value="#{list.frist}" rendered="#{list.isEditable}" size="10"/>
+                        <h:outputText value="#{list.frist}" rendered="#{not list.isEditable}"/>
+                    </h:column>
 
-               
-            </h:dataTable> 
-    </h:form>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{msgs.ultimoNome}" style="font-weight: bold"/>
+                        </f:facet>
+
+                        <h:inputText value="#{list.last}" rendered="#{list.isEditable}" size="10"/>
+                        <h:outputText value="#{list.last}" rendered="#{not list.isEditable}"/>
+                    </h:column>
+                      <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{msgs.escluirText}" style="font-weight: bold"/>
+                        </f:facet>
+                          <h:commandButton value="#{msgs.escluirText}" disabled="#{list.isEditable}" action="#{nameList.deleteName(list)}"/>
+                    </h:column>
+                          <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{msgs.salvarText}" style="font-weight: bold"/>
+                        </f:facet>
+                          <h:commandButton value="#{msgs.salvarText}" disabled="#{not list.isEditable}" action="#{nameList.salvaName(list)}"/>
+                    </h:column>
+
+                </h:dataTable> 
+                <h:commandButton value="#{msgs.buttonSave}" action="#{nameList.saveTodosNames}"/>
+            </h:form>
 
         </div>
     </main>
